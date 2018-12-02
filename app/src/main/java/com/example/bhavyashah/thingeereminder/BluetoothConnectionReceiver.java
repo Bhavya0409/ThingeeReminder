@@ -18,8 +18,8 @@ public class BluetoothConnectionReceiver extends BroadcastReceiver {
     private static final String CONTENT_TEXT = "Do you have your thingee??";
     private static final String CHANNEL_ID = "thingee_reminder";
 
-    private static final String BLUETOOTH_DEVICE_TO_COMPARE = "Beats Solo³";
-//    private static final String BLUETOOTH_DEVICE_TO_COMPARE = "HandsFreeLink";
+//    private static final String BLUETOOTH_DEVICE_TO_COMPARE = "Beats Solo³";
+    private static final String BLUETOOTH_DEVICE_TO_COMPARE = "HandsFreeLink";
 
     private Context context;
 
