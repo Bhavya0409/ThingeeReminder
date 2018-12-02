@@ -36,44 +36,10 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         ButterKnife.bind(this);
-
-        bluetoothConnectionReceiver = new BluetoothConnectionReceiver(getApplicationContext());
-
-        IntentFilter intentFilter = new IntentFilter();
-        intentFilter.addAction(Intent.ACTION_POWER_CONNECTED);
-        intentFilter.addAction(BluetoothDevice.ACTION_ACL_CONNECTED);
-        intentFilter.addAction(BluetoothDevice.ACTION_ACL_DISCONNECTED);
-
-        registerReceiver(bluetoothConnectionReceiver, intentFilter);
     }
 
     @OnClick(R.id.reminder_button)
     public void onClick(View v) {
         //TODO Toggle broadcast receiver on/off
-
-//        Intent intent = new Intent(this, SearchService.class);
-//        if (isMyServiceRunning(SearchService.class)) {
-//            stopService(intent);
-//            enabledTextView.setText("Disabled");
-//        } else {
-//            startService(intent);
-//            enabledTextView.setText("Enabled");
-//        }
-    }
-
-//    private boolean isMyServiceRunning(Class<?> serviceClass) {
-//        ActivityManager manager = (ActivityManager) getSystemService(Context.ACTIVITY_SERVICE);
-//        for (ActivityManager.RunningServiceInfo service : manager.getRunningServices(Integer.MAX_VALUE)) {
-//            if (serviceClass.getName().equals(service.service.getClassName())) {
-//                return true;
-//            }
-//        }
-//        return false;
-//    }
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        unregisterReceiver(bluetoothConnectionReceiver);
     }
 }

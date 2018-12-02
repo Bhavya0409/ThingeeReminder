@@ -22,8 +22,8 @@ public class BluetoothConnectionReceiver extends BroadcastReceiver {
 
     private Context context;
 
-    public BluetoothConnectionReceiver(Context context) {
-        this.context = context;
+    public BluetoothConnectionReceiver() {
+        context = MyApplication.getAppContext();
     }
 
     @Override
@@ -44,17 +44,11 @@ public class BluetoothConnectionReceiver extends BroadcastReceiver {
         Intent ii = new Intent(context, MainActivity.class);
         PendingIntent pendingIntent = PendingIntent.getActivity(context, 0, ii, 0);
 
-//        NotificationCompat.BigTextStyle bigText = new NotificationCompat.BigTextStyle();
-//        bigText.bigText("Big text here");
-//        bigText.setBigContentTitle("Today's Bible Verse");
-//        bigText.setSummaryText("Text in detail");
-
         mBuilder.setContentIntent(pendingIntent);
         mBuilder.setSmallIcon(R.mipmap.ic_launcher_round);
         mBuilder.setContentTitle(CONTENT_TITLE);
         mBuilder.setContentText(CONTENT_TEXT);
         mBuilder.setPriority(Notification.PRIORITY_MAX);
-//        mBuilder.setStyle(bigText);
 
         NotificationManager mNotificationManager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
 
