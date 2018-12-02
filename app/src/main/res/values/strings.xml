@@ -3,4 +3,6 @@
     <string name="toggle_reminder">Toggle Reminder</string>
     <string name="reminder">Reminder:</string>
     <string name="status">Disabled</string>
+    <string name="disabled">Disabled</string>
+    <string name="enabled">Enabled</string>
 </resources>

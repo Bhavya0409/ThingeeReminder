@@ -13,9 +13,10 @@ import android.support.v4.app.NotificationCompat;
 
 public class BluetoothConnectionReceiver extends BroadcastReceiver {
 
-    private static final String CHANNEL_NAME = "main";
+    private static final String CHANNEL_NAME = "Thingee Reminder";
     private static final String CONTENT_TITLE = "REMINDER!";
     private static final String CONTENT_TEXT = "Do you have your thingee??";
+    private static final String CHANNEL_ID = "thingee_reminder";
 
     private static final String BLUETOOTH_DEVICE_TO_COMPARE = "Beats Solo³";
 //    private static final String BLUETOOTH_DEVICE_TO_COMPARE = "HandsFreeLink";
@@ -28,7 +29,6 @@ public class BluetoothConnectionReceiver extends BroadcastReceiver {
 
     @Override
     public void onReceive(Context context, Intent intent) {
-        //TODO find a way to keep broadcast receiver in background even after app close
         if (intent.getAction().equals(BluetoothDevice.ACTION_ACL_CONNECTED) ||
                 intent.getAction().equals(BluetoothDevice.ACTION_ACL_DISCONNECTED)) {
             BluetoothDevice device = intent.getParcelableExtra(BluetoothDevice.EXTRA_DEVICE);
@@ -54,10 +54,8 @@ public class BluetoothConnectionReceiver extends BroadcastReceiver {
 
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            String channelId = "YOUR_CHANNEL_ID";
-            NotificationChannel channel = new NotificationChannel(channelId,
-                    "Channel human readable title",
-                    NotificationManager.IMPORTANCE_DEFAULT);
+            String channelId = CHANNEL_ID;
+            NotificationChannel channel = new NotificationChannel(channelId, CHANNEL_NAME, NotificationManager.IMPORTANCE_DEFAULT);
             mNotificationManager.createNotificationChannel(channel);
             mBuilder.setChannelId(channelId);
         }

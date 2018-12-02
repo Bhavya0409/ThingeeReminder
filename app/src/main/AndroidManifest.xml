@@ -21,12 +21,7 @@
             </intent-filter>
         </activity>
 
-        <receiver android:name=".BluetoothConnectionReceiver">
-            <intent-filter>
-                <action android:name="android.bluetooth.device.action.ACL_CONNECTED" />
-                <action android:name="android.bluetooth.device.action.ACL_DISCONNECTED" />
-            </intent-filter>
-        </receiver>
+        <service android:name=".BluetoothConnectionService"/>
     </application>
 
 </manifest>
