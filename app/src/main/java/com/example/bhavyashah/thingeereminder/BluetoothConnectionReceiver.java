@@ -13,12 +13,12 @@ import android.support.v4.app.NotificationCompat;
 
 public class BluetoothConnectionReceiver extends BroadcastReceiver {
 
-    private static final String CHANNEL_NAME = "Thingee Reminder";
+    public static final String CHANNEL_NAME = "Thingee Reminder";
     private static final String CONTENT_TITLE = "REMINDER!";
     private static final String CONTENT_TEXT = "Do you have your thingee??";
-    private static final String CHANNEL_ID = "thingee_reminder";
+    public static final String CHANNEL_ID = "thingee_reminder";
 
-//    private static final String BLUETOOTH_DEVICE_TO_COMPARE = "Beats Solo³";
+//    private static final String BLUETOOTH_DEVICE_TO_COMPARE = "Bhavya Shah’s Beats Solo³";
     private static final String BLUETOOTH_DEVICE_TO_COMPARE = "HandsFreeLink";
 
     private Context context;
